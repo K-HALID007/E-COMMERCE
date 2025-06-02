@@ -10,7 +10,7 @@ const Stories = () => {
           
           {/* Most Searched Products */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold text-gray-700 mb-4">MOST SEARCHED FOR ON FLIPKART:</h3>
+            <h3 className="text-lg font-semibold text-gray-700 mb-4">MOST SEARCHED FOR ON SHOPVERSE:</h3>
             <div className="text-sm text-gray-600 leading-relaxed">
               <p className="mb-2">
                 <span className="font-medium">Mobile Phones:</span> SAMSUNG Galaxy S25 Edge | MOTOROLA Razr 60 | CMF Phone 2 Pro | Google Pixel 9A | SAMSUNG F16 | iPhone 16a | SAMSUNG Galaxy S25 Ultra | SAMSUNG Galaxy S25 Plus | iPhone 16 | iPhone 16 Plus | iPhone 16 Pro | iPhone 16 Pro Max | vivo V50 | OPPO Reno13 Pro | POCO X7 | realme 14 Pro Plus | REDMI Note 14 Pro+ 5G | OPPO Find X8 | ShopVerse Exchange
@@ -174,7 +174,7 @@ const Stories = () => {
 
           {/* Best Selling Products */}
           <section>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">BEST SELLING ON FLIPKART</h3>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">BEST SELLING ON SHOPVERSE</h3>
             <div className="text-gray-600 leading-relaxed">
               <p>
                 <span className="font-medium">Electronics:</span> Headphones | Best Gas Geyser | Kitchen Geyser | Nutri Blenders | Portable Air Cooler | Best Air Cooler | Bags | Hitachi Refrigerator 3 Door | Books | Toys | Candles | Helmets | Wall Clocks | Baby Food | Chocolates | Cycles | Calculators | Lipsticks | Mask | Vertiv UPS | Fastrack Watches | Wallets | Earrings | Gold Coins | Realme Pad Mini | Handbags | conekt SW2 Smartwatch | Mivi DuoPods a350 | Speaker Cleaner
