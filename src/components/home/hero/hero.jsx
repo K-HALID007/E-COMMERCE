@@ -89,7 +89,7 @@ const EcommerceHeroSection = () => {
     <div className="bg-white relative">
       {/* Image Carousel Section */}
       <div className="bg-gray-50 py-8 relative">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-[1580px] mx-auto px-6 lg:px-12">
           {/* Carousel Container */}
           <div className="relative bg-white rounded-xl shadow-lg overflow-hidden">
             <div 
@@ -128,7 +128,7 @@ const EcommerceHeroSection = () => {
                           </div>
                         </div>
 
-                        <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center space-x-2">
+                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center space-x-2">
                           <ShoppingBag className="w-5 h-5" />
                           <span>Buy Now</span>
                         </button>
@@ -136,7 +136,7 @@ const EcommerceHeroSection = () => {
                     </div>
 
                     {/* Right Side - Product Image */}
-                    <div className="w-full md:w-3/5 h-64 md:h-96">
+                    <div className="w-full md:w-3/5 h-64 md:h-[450px]">
                       <img 
                         src={deal.image} 
                         alt={deal.title}
@@ -151,16 +151,16 @@ const EcommerceHeroSection = () => {
             {/* Navigation Arrows */}
             <button 
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full transition-all duration-300 shadow-lg z-10"
+              className="absolute left-0 top-[calc(50%-32px)] z-10 bg-white shadow-md h-16 px-1 hover:bg-gray-50 transition-colors flex items-center justify-center"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 text-gray-600" />
             </button>
             
             <button 
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full transition-all duration-300 shadow-lg z-10"
+              className="absolute right-0 top-[calc(50%-32px)] z-10 bg-white shadow-md h-16 px-1 hover:bg-gray-50 transition-colors flex items-center justify-center"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 text-gray-600" />
             </button>
           </div>
 
@@ -183,7 +183,7 @@ const EcommerceHeroSection = () => {
 
       {/* Quick Categories Bar */}
       <div className="bg-white border-t">
-        <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="max-w-[1580px] mx-auto px-4 py-6">
           <div className="flex flex-wrap justify-center gap-4">
             {['Electronics', 'Fashion', 'Home & Kitchen', 'Beauty', 'Sports', 'Books'].map((category) => (
               <button
@@ -193,17 +193,6 @@ const EcommerceHeroSection = () => {
                 {category}
               </button>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Live Shopping Activity */}
-      <div className="fixed bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border z-[60]">
-        <div className="flex items-center space-x-3">
-          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-          <div className="text-sm">
-            <div className="font-semibold text-gray-900">1,247 people</div>
-            <div className="text-gray-600">shopping right now</div>
           </div>
         </div>
       </div>

@@ -1,12 +1,11 @@
 "use client"
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { Star, Heart, ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const ShoppingSectionOnly499 = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
 
   const checkScroll = () => {
     if (scrollRef.current) {
@@ -16,43 +15,17 @@ const ShoppingSectionOnly499 = () => {
     }
   };
 
-  // Auto scroll functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (scrollRef.current && !isPaused) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        if (scrollLeft >= scrollWidth - clientWidth) {
-          scrollRef.current.scrollTo({ left: 0, behavior: 'auto' });
-        } else {
-          scrollRef.current.scrollBy({ left: 1, behavior: 'auto' });
-        }
-      }
-    }, 30);
-
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
   const scrollLeft = () => {
     if (scrollRef.current) {
-      setIsPaused(true); // Pause auto-scroll
       scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-      // Resume auto-scroll after animation
-      setTimeout(() => setIsPaused(false), 500);
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      setIsPaused(true); // Pause auto-scroll
       scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-      // Resume auto-scroll after animation
-      setTimeout(() => setIsPaused(false), 500);
     }
   };
-
-  // Mouse event handlers for pausing animation
-  const handleMouseEnter = () => setIsPaused(true);
-  const handleMouseLeave = () => setIsPaused(false);
 
   const products = [
     {
@@ -138,224 +111,39 @@ const ShoppingSectionOnly499 = () => {
     },
     {
       id: 10,
-      name: "Coffee Mug",
-      image: "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=300&h=300&fit=crop",
+      name: "Premium Coffee Mug",
+      image: "https://images.pexels.com/photos/1307127/pexels-photo-1307127.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2",
       originalPrice: 599,
       rating: 4.3,
       reviews: 92,
       category: "Home"
-    },
-    {
-      id: 11,
-      name: "Sunglasses",
-      image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=300&fit=crop",
-      originalPrice: 799,
-      rating: 4.4,
-      reviews: 156,
-      category: "Fashion"
-    },
-    {
-      id: 12,
-      name: "Notebook Set",
-      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=300&fit=crop",
-      originalPrice: 649,
-      rating: 4.2,
-      reviews: 78,
-      category: "Stationery"
-    },
-    {
-      id: 13,
-      name: "Keychain",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
-      originalPrice: 299,
-      rating: 4.0,
-      reviews: 45,
-      category: "Accessories"
-    },
-    {
-      id: 14,
-      name: "Hand Cream",
-      image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=300&h=300&fit=crop",
-      originalPrice: 699,
-      rating: 4.5,
-      reviews: 123,
-      category: "Beauty"
-    },
-    {
-      id: 15,
-      name: "Socks Pack",
-      image: "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=300&h=300&fit=crop",
-      originalPrice: 599,
-      rating: 4.1,
-      reviews: 67,
-      category: "Fashion"
-    },
-    {
-      id: 16,
-      name: "Wireless Mouse",
-      image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop",
-      originalPrice: 899,
-      rating: 4.3,
-      reviews: 134,
-      category: "Electronics"
-    },
-    {
-      id: 17,
-      name: "Travel Pillow",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop",
-      originalPrice: 799,
-      rating: 4.2,
-      reviews: 98,
-      category: "Travel"
-    },
-    {
-      id: 18,
-      name: "Desk Plant",
-      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&h=300&fit=crop",
-      originalPrice: 649,
-      rating: 4.6,
-      reviews: 87,
-      category: "Home"
-    },
-    {
-      id: 19,
-      name: "Phone Case",
-      image: "https://images.unsplash.com/photo-1601593346740-925612772716?w=300&h=300&fit=crop",
-      originalPrice: 699,
-      rating: 4.4,
-      reviews: 156,
-      category: "Accessories"
-    },
-    {
-      id: 20,
-      name: "Lip Balm Set",
-      image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=300&h=300&fit=crop",
-      originalPrice: 549,
-      rating: 4.1,
-      reviews: 73,
-      category: "Beauty"
-    },
-    {
-      id: 21,
-      name: "Hair Band",
-      image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&h=300&fit=crop",
-      originalPrice: 399,
-      rating: 4.0,
-      reviews: 52,
-      category: "Fashion"
-    },
-    {
-      id: 22,
-      name: "Car Charger",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
-      originalPrice: 799,
-      rating: 4.5,
-      reviews: 142,
-      category: "Electronics"
-    },
-    {
-      id: 23,
-      name: "Bookmark Set",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
-      originalPrice: 299,
-      rating: 3.9,
-      reviews: 34,
-      category: "Stationery"
-    },
-    {
-      id: 24,
-      name: "Mini Fan",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop",
-      originalPrice: 899,
-      rating: 4.3,
-      reviews: 118,
-      category: "Electronics"
-    },
-    {
-      id: 25,
-      name: "Candle Set",
-      image: "https://images.unsplash.com/photo-1602874801006-47c3a3279c5a?w=300&h=300&fit=crop",
-      originalPrice: 749,
-      rating: 4.7,
-      reviews: 91,
-      category: "Home"
-    },
-    {
-      id: 26,
-      name: "Pen Set",
-      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=300&fit=crop",
-      originalPrice: 649,
-      rating: 4.2,
-      reviews: 67,
-      category: "Stationery"
-    },
-    {
-      id: 27,
-      name: "Card Holder",
-      image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=300&h=300&fit=crop",
-      originalPrice: 599,
-      rating: 4.4,
-      reviews: 89,
-      category: "Accessories"
-    },
-    {
-      id: 28,
-      name: "Face Mask",
-      image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=300&h=300&fit=crop",
-      originalPrice: 699,
-      rating: 4.5,
-      reviews: 103,
-      category: "Beauty"
-    },
-    {
-      id: 29,
-      name: "Cable Organizer",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
-      originalPrice: 449,
-      rating: 4.1,
-      reviews: 78,
-      category: "Electronics"
-    },
-    {
-      id: 30,
-      name: "Coaster Set",
-      image: "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=300&h=300&fit=crop",
-      originalPrice: 549,
-      rating: 4.0,
-      reviews: 56,
-      category: "Home"
-    }
+    },  
   ];
 
   const discount = (originalPrice) => Math.round(((originalPrice - 499) / originalPrice) * 100);
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-slate-100 py-12 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gradient-to-br from-blue-50 to-slate-100 py-8">
+      <div className="max-w-[1580px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-4 animate-pulse shadow-lg">
-            ⚡ FLASH SALE
-          </div>
-          <h2 className="text-4xl font-bold text-slate-800 mb-2">
-            Everything at ₹499 Only!
+          <h2 className="text-2xl font-bold text-slate-800 mb-2">
+            Deal of the Day | ₹499 Store
           </h2>
-          <p className="text-lg text-slate-600">
-            Limited time offer • Grab them before they're gone!
+          <p className="text-slate-600">
+            Grab your favorite items at unbelievable prices
           </p>
         </div>
 
-        {/* Horizontal Scrolling Products */}
+        {/* Product Carousel */}
         <div className="relative">
           {/* Left Scroll Button */}
           {canScrollLeft && (
             <button
               onClick={scrollLeft}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 hover:shadow-xl transition-all duration-200 border border-slate-200"
+              className="absolute left-0 top-[calc(50%-32px)] z-10 bg-white shadow-md h-16 px-1 hover:bg-gray-50 transition-colors flex items-center justify-center"
             >
-              <ChevronLeft className="w-5 h-5 text-slate-600" />
+              <ChevronLeft className="w-5 h-5 text-gray-600" />
             </button>
           )}
           
@@ -363,20 +151,16 @@ const ShoppingSectionOnly499 = () => {
           {canScrollRight && (
             <button
               onClick={scrollRight}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 hover:shadow-xl transition-all duration-200 border border-slate-200"
+              className="absolute right-0 top-[calc(50%-32px)] z-10 bg-white shadow-md h-16 px-1 hover:bg-gray-50 transition-colors flex items-center justify-center"
             >
-              <ChevronRight className="w-5 h-5 text-slate-600" />
+              <ChevronRight className="w-5 h-5 text-gray-600" />
             </button>
           )}
 
           <div 
             ref={scrollRef}
             onScroll={checkScroll}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide"
+            className="flex gap-5 overflow-x-auto scrollbar-hide scroll-smooth px-1"
           >
             <style jsx>{`
               .scrollbar-hide {
@@ -388,89 +172,75 @@ const ShoppingSectionOnly499 = () => {
               }
             `}</style>
             
-            {products.map((product) => (
+            {products.slice(0, 10).map((product) => (
               <div 
                 key={product.id} 
-                className="min-w-60 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group overflow-hidden border border-slate-200"
+                className="min-w-[280px] bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 group"
               >
                 {/* Product Image */}
-                <div className="relative overflow-hidden">
+                <div className="relative p-4">
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-200"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=300&h=300&fit=crop';
+                    }}
                   />
-                  <div className="absolute top-2 left-2 bg-blue-600 text-white px-2 py-1 rounded-md text-xs font-bold">
-                    {discount(product.originalPrice)}% OFF
-                  </div>
-                  <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm rounded-full p-1.5 hover:bg-blue-50 transition-colors cursor-pointer">
-                    <Heart className="w-4 h-4 text-slate-600 hover:text-blue-600 transition-colors" />
+                  {/* Wishlist Heart */}
+                  <button 
+                    className="absolute top-6 right-6 bg-white rounded-full p-1.5 shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    <Heart className="w-4 h-4 text-gray-400 hover:text-red-500" />
+                  </button>
+                  {/* Offer Badge */}
+                  <div className="absolute bottom-6 left-6 bg-green-600 text-white px-2 py-1 rounded text-xs font-medium">
+                    {discount(product.originalPrice)}% off
                   </div>
                 </div>
 
                 {/* Product Details */}
-                <div className="p-4">
-                  <div className="mb-2">
-                    <span className="text-xs font-medium text-blue-700 bg-blue-100 px-2 py-0.5 rounded-md">
-                      {product.category}
-                    </span>
-                  </div>
+                <div className="px-4 pb-4">
+                  {/* Category as Brand */}
+                  <div className="text-gray-500 text-sm mb-1">{product.category}</div>
                   
-                  <h3 className="font-semibold text-sm text-slate-800 mb-2 line-clamp-1">
+                  {/* Product Name */}
+                  <h3 className="font-medium text-gray-800 text-sm mb-2 line-clamp-2 leading-5">
                     {product.name}
                   </h3>
                   
                   {/* Rating */}
-                  <div className="flex items-center gap-1 mb-3">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-3 h-3 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-slate-300'}`} 
-                        />
-                      ))}
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center bg-green-600 text-white px-1.5 py-0.5 rounded text-xs">
+                      <span className="font-medium">{product.rating}</span>
+                      <Star className="w-3 h-3 ml-1 fill-current" />
                     </div>
-                    <span className="text-xs text-slate-500">
-                      {product.rating} ({product.reviews})
-                    </span>
+                    <span className="text-gray-500 text-xs">({product.reviews})</span>
                   </div>
                   
                   {/* Pricing */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xl font-bold text-blue-600">₹499</span>
-                    <span className="text-sm text-slate-400 line-through">₹{product.originalPrice}</span>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg font-bold text-gray-900">₹499</span>
+                    <span className="text-sm text-gray-500 line-through">₹{product.originalPrice}</span>
                   </div>
                   
+                  {/* Delivery Info */}
+                  <div className="text-xs text-gray-600 mb-3">
+                    Free delivery
+                  </div>
+
+                  {/* Placeholder for spacing (like Shopverse Assured) */}
+                  <div className="mb-2 min-h-[24px]"></div>
+                  
                   {/* Add to Cart Button */}
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium py-2 px-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 shadow-sm text-sm">
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded flex items-center justify-center gap-2 text-sm transition-colors duration-200">
                     <ShoppingCart className="w-4 h-4" />
-                    Add to Cart
+                    ADD TO CART
                   </button>
                 </div>
               </div>
             ))}
-          </div>
-          
-          {/* Scroll Progress Indicator */}
-          <div className="flex justify-center mt-6">
-            <div className="bg-slate-200 rounded-full h-2 w-32 overflow-hidden">
-              <div 
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
-                style={{
-                  width: scrollRef.current 
-                    ? `${Math.min(100, (scrollRef.current.scrollLeft / (scrollRef.current.scrollWidth - scrollRef.current.clientWidth)) * 100)}%`
-                    : '0%'
-                }}
-              ></div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Call to Action */}
-        <div className="text-center mt-8">
-          <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 shadow-md border border-slate-200">
-            <span className="text-slate-600">⏰ Hurry! Sale ends in:</span>
-            <span className="font-bold text-blue-600">23:45:12</span>
           </div>
         </div>
       </div>

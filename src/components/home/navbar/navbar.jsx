@@ -1,11 +1,10 @@
 "use client"
 import React, { useState } from 'react';
-import { Search, ShoppingCart, User, Menu, X, ChevronDown, Heart, Bell } from 'lucide-react';
+import { Search, ShoppingCart, User, Menu, X, ChevronDown, Heart, Bell, Store } from 'lucide-react';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(3);
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-[100]">
@@ -13,12 +12,19 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           
-          {/* Logo */}
+          {/* Logo with Icon */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                ShopVerse
-              </h1>
+              <div className="flex flex-col items-center">
+                {/* Logo Icon */}
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-1.5 rounded-lg mb-1">
+                  <Store className="w-5 h-5 text-white" />
+                </div>
+                {/* Logo Text */}
+                <h1 className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent leading-none">
+                  ShopVerse
+                </h1>
+              </div>
             </div>
           </div>
 
@@ -74,32 +80,24 @@ const Navbar = () => {
             </div>
 
             {/* Become a Seller */}
-            <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
-              Become a Seller
+            <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 flex items-center space-x-2">
+              <Store className="w-5 h-5" />
+              <span>Become a Seller</span>
             </button>
 
             {/* Wishlist */}
             <button className="relative text-gray-700 hover:text-red-500 transition-colors duration-200">
               <Heart className="w-6 h-6" />
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                2
-              </span>
             </button>
 
             {/* Cart */}
             <button className="relative text-gray-700 hover:text-blue-600 transition-colors duration-200">
               <ShoppingCart className="w-6 h-6" />
-              {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
-                  {cartCount}
-                </span>
-              )}
             </button>
 
             {/* Notifications */}
             <button className="relative text-gray-700 hover:text-yellow-500 transition-colors duration-200">
               <Bell className="w-6 h-6" />
-              <span className="absolute -top-1 -right-1 bg-green-500 w-3 h-3 rounded-full"></span>
             </button>
           </div>
 
@@ -141,7 +139,7 @@ const Navbar = () => {
               
               <a href="#" className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
                 <ShoppingCart className="w-5 h-5" />
-                <span>Cart ({cartCount})</span>
+                <span>Cart</span>
               </a>
               
               <a href="#" className="flex items-center space-x-3 text-gray-700 hover:text-red-500 transition-colors">
@@ -156,8 +154,9 @@ const Navbar = () => {
               
               <hr className="my-3" />
               
-              <a href="#" className="block text-blue-600 font-medium">
-                Become a Seller
+              <a href="#" className="flex items-center space-x-3 text-blue-600 font-medium">
+                <Store className="w-5 h-5" />
+                <span>Become a Seller</span>
               </a>
               
               <a href="#" className="block text-gray-700 hover:text-blue-600 transition-colors">
