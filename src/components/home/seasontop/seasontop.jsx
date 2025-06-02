@@ -140,7 +140,7 @@ const SeasonalTopPicks = () => {
   return (
     <div className="bg-gray-100 py-8">
       <div className="max-w-[1580px] mx-auto px-6 lg:px-12">
-        {/* Header - Flipkart Style */}
+        {/* Header - ShopVerse Style */}
         <div className="bg-white rounded-lg shadow-sm mb-6 p-6">
           <div className="flex items-center justify-between">
             <div>
@@ -285,7 +285,7 @@ const SeasonalTopPicks = () => {
           ))}
         </div>
 
-        {/* Bottom Banner - Flipkart Style */}
+        {/* Bottom Banner - ShopVerse Style */}
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mt-8 p-6 text-white text-center">
           <h3 className="text-xl font-bold mb-2">🛍️ Winter Sale - Up to 70% Off</h3>
           <p className="mb-4">Free delivery on orders above ₹499 | Easy returns</p>

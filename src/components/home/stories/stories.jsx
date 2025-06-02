@@ -13,7 +13,7 @@ const Stories = () => {
             <h3 className="text-lg font-semibold text-gray-700 mb-4">MOST SEARCHED FOR ON FLIPKART:</h3>
             <div className="text-sm text-gray-600 leading-relaxed">
               <p className="mb-2">
-                <span className="font-medium">Mobile Phones:</span> SAMSUNG Galaxy S25 Edge | MOTOROLA Razr 60 | CMF Phone 2 Pro | Google Pixel 9A | SAMSUNG F16 | iPhone 16a | SAMSUNG Galaxy S25 Ultra | SAMSUNG Galaxy S25 Plus | iPhone 16 | iPhone 16 Plus | iPhone 16 Pro | iPhone 16 Pro Max | vivo V50 | OPPO Reno13 Pro | POCO X7 | realme 14 Pro Plus | REDMI Note 14 Pro+ 5G | OPPO Find X8 | Flipkart Exchange
+                <span className="font-medium">Mobile Phones:</span> SAMSUNG Galaxy S25 Edge | MOTOROLA Razr 60 | CMF Phone 2 Pro | Google Pixel 9A | SAMSUNG F16 | iPhone 16a | SAMSUNG Galaxy S25 Ultra | SAMSUNG Galaxy S25 Plus | iPhone 16 | iPhone 16 Plus | iPhone 16 Pro | iPhone 16 Pro Max | vivo V50 | OPPO Reno13 Pro | POCO X7 | realme 14 Pro Plus | REDMI Note 14 Pro+ 5G | OPPO Find X8 | ShopVerse Exchange
               </p>
               <p className="mb-2">
                 <span className="font-medium">Electronics:</span> Samsung Galaxy Tab S10 | iPad Air | MacBook Pro M4 | Lenovo ThinkPad | HP Pavilion | Dell Inspiron | ASUS ROG | Gaming Laptops | Wireless Headphones | Sony WH-1000XM5 | AirPods Pro | JBL Speakers | Canon EOS | Nikon DSLR
@@ -55,32 +55,32 @@ const Stories = () => {
 
         {/* Main Content Section */}
         <div className="space-y-12">
-          {/* Flipkart Introduction */}
+          {/* ShopVerse Introduction */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Flipkart: The One-stop Shopping Destination</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">ShopVerse: The One-stop Shopping Destination</h2>
             <div className="text-gray-600 space-y-4 leading-relaxed">
               <p>
-                E-commerce is revolutionizing the way we all shop in India. Why do you want to hop from one store to another in search of the latest phone when you can find it on the Internet in a single click? Not only mobiles, Flipkart houses everything you can possibly imagine, from trending electronics like laptops, tablets, smartphones, and mobile accessories; to in-vogue fashion staples like shoes, clothing and lifestyle accessories; from modern furniture like sofa sets, dining tables, and wardrobes to appliances that make your life easy like washing machines, TVs, ACs, mixer grinder juicers and other time-saving kitchen and small appliances; from home furnishing like cushion covers, mattresses and bedsheets to toys and musical instruments, we got them all covered.
+                E-commerce is revolutionizing the way we all shop in India. Why do you want to hop from one store to another in search of the latest phone when you can find it on the Internet in a single click? Not only mobiles, ShopVerse houses everything you can possibly imagine, from trending electronics like laptops, tablets, smartphones, and mobile accessories; to in-vogue fashion staples like shoes, clothing and lifestyle accessories; from modern furniture like sofa sets, dining tables, and wardrobes to appliances that make your life easy like washing machines, TVs, ACs, mixer grinder juicers and other time-saving kitchen and small appliances; from home furnishings like cushion covers, mattresses and bedsheets to toys and musical instruments, we got them all covered. You name it, and you can stay assured about finding them all here. For those of you with erratic working hours, ShopVerse is your best bet. Shop in your PJs, at night or in the wee hours of the morning. This e-commerce never shuts down.
               </p>
               <p>
-                What's more, with our year-round shopping festivals and events, our prices are irresistible. We're sure you'll find yourself picking up more than what you had in mind. If you are wondering why you should shop from Flipkart when there are multiple options available to you, well, the below will answer your question.
+                What's more, with our year-round shopping festivals and events, our prices are irresistible. We're sure you'll find yourself picking up more than what you had in mind. If you are wondering why you should shop from ShopVerse when there are multiple options available to you, well, the below will answer your question.
               </p>
             </div>
           </section>
 
-          {/* Flipkart Plus */}
+          {/* ShopVerse Plus */}
           <section>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Flipkart Plus</h3>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">ShopVerse Plus</h3>
             <div className="text-gray-600 space-y-4 leading-relaxed">
               <p>
-                A world of limitless possibilities awaits you - Flipkart Plus was kickstarted as a loyalty reward programme for all its regular customers at zero subscription fee. All you need is 500 supercoins to be a part of this service. For every 100 rupees spent on Flipkart order, Plus members earn 4 supercoins & non-plus members earn 2 supercoins. Free delivery, early access during sales and shopping festivals, exchange offers and priority customer service are the top benefits to a Flipkart Plus member.
+                A world of limitless possibilities awaits you - ShopVerse Plus was kickstarted as a loyalty reward programme for all its regular customers at zero subscription fee. All you need is 500 supercoins to be a part of this service. For every 100 rupees spent on ShopVerse order, Plus members earn 4 supercoins & non-plus members earn 2 supercoins. Free delivery, early access during sales and shopping festivals, exchange offers and priority customer service are the top benefits to a ShopVerse Plus member.
               </p>
-              <p className="font-medium">What's more, you can even use the Flipkart supercoins for a number of exciting services, like:</p>
+              <p className="font-medium">What's more, you can even use the ShopVerse supercoins for a number of exciting services, like:</p>
               <ul className="list-disc pl-6 space-y-1">
                 <li>An annual Zomato Gold membership</li>
                 <li>An annual Hotstar Premium membership</li>
-                <li>6 months Gaana plus subscription</li>
-                <li>Rupees 550 instant discount on flights on ixigo</li>
+                <li>6 months Gaana Plus subscription</li>
+                <li>Rupay Insurance protection</li>
               </ul>
             </div>
           </section>
@@ -97,7 +97,7 @@ const Stories = () => {
           <section>
             <h3 className="text-xl font-bold text-gray-800 mb-4">EMI on Debit Cards</h3>
             <p className="text-gray-600 leading-relaxed">
-              Did you know debit card holders account for 79.38 crore in the country, while there are only 3.14 crore credit card holders? After enabling EMI on Credit Cards, in another attempt to make online shopping accessible to everyone, Flipkart introduces EMI on Debit Cards, empowering you to shop confidently with us without having to worry about pauses in monthly cash flow. At present, we have partnered with Axis Bank, HDFC Bank, State Bank of India and ICICI Bank for this facility. More power to all our shoppers! Terms and conditions apply.
+              Did you know debit card holders account for 79.38 crore in the country, while there are only 3.14 crore credit card holders? After enabling EMI on Credit Cards, in another attempt to make online shopping accessible to everyone, ShopVerse introduces EMI on Debit Cards, empowering you to shop confidently with us without having to worry about pauses in monthly cash flow. At present, we have partnered with Axis Bank, HDFC Bank, State Bank of India, and ICICI Bank for this facility. More power to all our shoppers! Terms and conditions apply.
             </p>
           </section>
 
@@ -105,20 +105,20 @@ const Stories = () => {
           <section>
             <h3 className="text-xl font-bold text-gray-800 mb-4">Mobile Exchange Offers</h3>
             <p className="text-gray-600 leading-relaxed">
-              Get an instant discount on the phone that you have been eyeing on. Exchange your old mobile for a new one after the Flipkart experts calculate the value of your old phone, provided it is in a working condition without damage to the screen. If a phone is applicable for an exchange offer, you will see the 'Buy with Exchange' option on the product description of the phone. So, be smart, always opt for an exchange wherever possible. Terms and conditions apply.
+              Get an instant discount on the phone that you have been eyeing on. Exchange your old mobile for a new one after the ShopVerse experts calculate the value of your old phone, provided it is in a working condition without damage to the screen. If a phone is applicable for an exchange offer, you will see the 'Buy with Exchange' option on the product description of the phone. So, be smart, always opt for an exchange wherever possible. Terms and conditions apply.
             </p>
           </section>
 
           {/* What Can You Buy Section */}
           <section>
-            <h3 className="text-xl font-bold text-gray-800 mb-6">What Can You Buy From Flipkart?</h3>
+            <h3 className="text-xl font-bold text-gray-800 mb-6">What Can You Buy From ShopVerse?</h3>
             
             <div className="space-y-8">
               {/* Mobile Phones */}
               <div>
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Mobile Phones</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  From budget-friendly smartphones to premium flagship devices, Flipkart offers an extensive range of mobile phones from top brands like Samsung, Apple, OnePlus, Xiaomi, Realme, OPPO, Vivo, and many more. Whether you're looking for the latest iPhone, a powerful gaming phone, or a reliable daily driver, you'll find the perfect device with exciting offers, exchange deals, and EMI options.
+                  From budget-friendly smartphones to premium flagship devices, ShopVerse offers an extensive range of mobile phones from top brands like Samsung, Apple, OnePlus, Xiaomi, Realme, OPPO, Vivo, and many more. Whether you're looking for the latest iPhone, a powerful gaming phone, or an affordable daily driver, you'll find it here with the best deals and offers.
                 </p>
               </div>
 
@@ -126,7 +126,7 @@ const Stories = () => {
               <div>
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Large Appliances</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  Sleek TVs, power-saving refrigerators, rapid-cooling ACs, resourceful washing machines - discover everything you need to run a house under one roof. Our <span className="font-medium">Dependable TV and Appliance Store</span> ensures zero transit damage, with a replacement guarantee if anything goes wrong; delivery and installation as per your convenience and a double warranty (Official Brand Warranty along with an extended Flipkart Warranty) - rest assured, value for money is what is promised and delivered.
+                  Sleek TVs, power-saving refrigerators, rapid-cooling ACs, resourceful washing machines - discover everything you need to run a house under one roof. Our Dependable TV and Appliance Store ensures zero transit damage, with a replacement guarantee if anything goes wrong; delivery and installation as per your convenience and a double warranty (Official Manufacturer Warranty along with an extended ShopVerse Warranty) - rest assured, value for money is what is promised and delivered.
                 </p>
               </div>
 
@@ -142,7 +142,7 @@ const Stories = () => {
               <div>
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Lifestyle</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  Flipkart, 'India ka Fashion Capital', is your one-stop fashion destination for anything and everything you need to look good. Our exhaustive range of Western and Indian wear, summer and winter clothing, formal and casual footwear, bridal and artificial jewellery, long-lasting make-up, grooming tools and accessories are sure to sweep you off your feet. Shop from crowd favourites like Vero Moda, Forever 21, Only, Arrow, Woodland, Nike, Puma, Revlon, Mac, and Sephora among dozens of other top-of-the-ladder names.
+                  ShopVerse, 'India ka Fashion Capital', is your one-stop fashion destination for anything and everything you need to look good. Our exhaustive range of Western and Indian wear, summer and winter clothing, formal and casual footwear, bridal and artificial jewellery, long-lasting make-up, grooming tools and accessories are sure to sweep you off your feet. Shop from hundreds of big brands such as Forever 21, Under Armour, Adidas, Fossil, Lavie, Nike, Puma, Revlon, Philips, and many more. From summer staple maxi dresses, no-nonsense cigarette pants, traditional Bandhani kurtis to street-smart biker jackets, you can rely on us for a wardrobe that is up to date. Explore our in-house brands like Metronaut, Anmi, and Denizen, for carefully curated designs that are the talk of the town.
                 </p>
               </div>
 
@@ -150,7 +150,7 @@ const Stories = () => {
               <div>
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Home and Furniture</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  Moving to a new place is never easy, especially if you're buying new furniture. Beds, sofa sets, dining tables, wardrobes, and TV units - it's not easy to set up everything again. With hundreds of options thrown at you, the ride could be overwhelming. Our <span className="font-medium">Durability Certified Furniture Store</span> has not only curated a range of furniture keeping in mind the modern Indian consumer but has also made it simpler to collect, ensuring that you receive only the best-quality furniture. <span className="font-medium">Be FurniSure</span>, always.
+                  Moving to a new place is never easy, especially if you're buying new furniture. Beds, sofa sets, dining tables, wardrobes, and TV units - it's not easy to set up everything again. With the hundreds of options thrown at you, the ride could be overwhelming. What place is reliable, what furniture will stand the test of time? These are questions you must ask before you choose a store. Well, our Durability Certified Furniture Store has not only curated a range of furniture keeping in mind the modern Indian consumer but furniture that comes with a lab certification, ensuring they last you for up to 10 years. Yes, all our furniture has gone through 35 stability and load tests so that you receive only the best-quality furniture. Be FurniSure, always.
                 </p>
               </div>
 
@@ -166,7 +166,7 @@ const Stories = () => {
               <div>
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Books, Sports and Games</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  Flipkart, in its association with leading publishers like Penguin, Harper Collins, Arihant, Oswaal, and many more, brings you an excellent collection of books that cover every genre - be it fiction, non-fiction, biographies, history, religion, self-help, competitive exam books or academic textbooks. You can also indulge in fun fitness activities by buying sports equipment, accessories, footballs, cricket bats and more.
+                  Work hard and no play? We don't believe in that. Get access to best-selling fiction and non-fiction books by your favourite authors, thrilling English and Indian blockbusters, most-wanted gaming consoles, and a tempting range of fitness and sports gadgets with offers you cannot resist.
                 </p>
               </div>
             </div>
@@ -186,7 +186,7 @@ const Stories = () => {
         {/* Footer Bottom */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="text-center text-sm text-gray-500">
-            <p>Experience the best of online shopping with Flipkart - Your trusted partner for all shopping needs</p>
+            <p>Experience the best of online shopping with ShopVerse - Your trusted partner for all shopping needs</p>
           </div>
         </div>
       </div>
