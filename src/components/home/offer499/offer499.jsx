@@ -112,7 +112,7 @@ const ShoppingSectionOnly499 = () => {
     {
       id: 10,
       name: "Premium Coffee Mug",
-      image: "https://images.pexels.com/photos/1307127/pexels-photo-1307127.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2",
+      image: "Premium Coffee Mug.jpg",
       originalPrice: 599,
       rating: 4.3,
       reviews: 92,

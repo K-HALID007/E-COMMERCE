@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { Search, ShoppingCart, User, Menu, X, ChevronDown, Heart, Bell, Store } from 'lucide-react';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           
           {/* Logo with Icon */}
-          <div className="flex items-center">
+          <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
             <div className="flex-shrink-0">
               <div className="flex flex-col items-center">
                 {/* Logo Icon */}
@@ -26,7 +27,7 @@ const Navbar = () => {
                 </h1>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Search Bar */}
           <div className="flex-1 max-w-2xl mx-6">

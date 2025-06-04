@@ -1,12 +1,24 @@
 "use client"
 import React, { useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Categories = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const router = useRouter();
 
   const handleCategoryClick = (categoryName) => {
     setActiveDropdown(categoryName === activeDropdown ? null : categoryName);
+  };
+
+  const handleItemClick = (category, subcategory, item) => {
+    // Close the dropdown
+    setActiveDropdown(null);
+    // Navigate to the electronic route
+    if (category.toLowerCase() === 'electronics') {
+      router.push('/electronic');
+    }
   };
 
   const categories = [
@@ -253,12 +265,13 @@ const Categories = () => {
                       <ul className="space-y-2">
                         {subcategory.items.slice(0, 5).map((item, itemIndex) => (
                           <li key={itemIndex}>
-                            <a 
-                              href="#" 
+                            <Link
+                              href={activeDropdown.toLowerCase() === 'electronics' ? '/electronic' : '#'}
+                              onClick={() => handleItemClick(activeDropdown, subcategory.title, item)}
                               className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200 block py-1 hover:translate-x-1 transform transition-transform"
                             >
                               {item}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -267,13 +280,14 @@ const Categories = () => {
                 </div>
 
                 <div className="border-t border-gray-100 pt-4 mt-6">
-                  <a 
-                    href="#" 
+                  <Link
+                    href={activeDropdown.toLowerCase() === 'electronics' ? '/electronic' : '#'}
                     className="text-blue-600 font-medium text-sm hover:text-blue-700 transition-colors flex items-center space-x-1 group"
+                    onClick={() => setActiveDropdown(null)}
                   >
                     <span>View All {activeDropdown} Categories</span>
                     <ChevronDown className="w-3 h-3 rotate-[-90deg] group-hover:translate-x-1 transition-transform duration-200" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

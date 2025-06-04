@@ -11,7 +11,7 @@ const EcommerceHeroSection = () => {
       id: 1,
       title: "Mobile Phone Mega Sale",
       subtitle: "Latest Smartphones at Unbeatable Prices",
-      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&h=400&fit=crop",
+      image: "Mobile Phone Mega Sale.jpg",
       discount: "Up to 50% OFF",
       category: "Electronics",
       originalPrice: "₹49,999",
