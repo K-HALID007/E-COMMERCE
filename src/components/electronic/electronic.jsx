@@ -644,6 +644,11 @@ const ElectronicsPage = () => {
     }
   ];
 
+  // Format price consistently
+  const formatPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   const ProductCard = ({ product }) => {
     const discountAmount = product.originalPrice - product.salePrice;
     
@@ -730,17 +735,17 @@ const ElectronicsPage = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
                 <span className="text-2xl font-bold text-gray-900">
-                  ₹{product.salePrice.toLocaleString()}
+                  ₹{formatPrice(product.salePrice)}
                 </span>
                 <span className="text-lg text-gray-500 line-through">
-                  ₹{product.originalPrice.toLocaleString()}
+                  ₹{formatPrice(product.originalPrice)}
                 </span>
                 <span className="text-green-600 font-medium">
                   {product.discount}% off
                 </span>
               </div>
               <div className="text-sm text-green-600 font-medium">
-                You save: ₹{discountAmount.toLocaleString()}
+                You save: ₹{formatPrice(discountAmount)}
               </div>
             </div>
 
@@ -754,7 +759,7 @@ const ElectronicsPage = () => {
               </div>
               <div className="flex items-center text-sm">
                 <Award className="w-4 h-4 mr-2 text-green-600" />
-                <span className="text-gray-700">Flipkart Assured</span>
+                <span className="text-gray-700">Shop verse   Assured</span>
               </div>
             </div>
 
@@ -804,103 +809,6 @@ const ElectronicsPage = () => {
     <div className="bg-white">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-8 text-gray-900">Electronics</h1>
-        
-        {/* Featured Categories - Extended */}
-        <div className="mb-12">
-          <h2 className="text-xl font-bold mb-6 text-gray-900">Categories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-lg font-semibold mb-4 text-gray-900">Mobiles & Tablets</h2>
-              <ul className="space-y-2">
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smartphones</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Tablets</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Mobile Accessories</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Tablet Accessories</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Mobile Chargers</li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-lg font-semibold mb-4 text-gray-900">Computers</h2>
-              <ul className="space-y-2">
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Laptops</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Desktop PCs</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Laptops</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Monitors</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">PC Components</li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-lg font-semibold mb-4 text-gray-900">Audio & Video</h2>
-              <ul className="space-y-2">
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Headphones</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Speakers</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart TVs</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Soundbars</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Microphones</li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-lg font-semibold mb-4 text-gray-900">Smart Home</h2>
-              <ul className="space-y-2">
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Speakers</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Security Cameras</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Lights</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Plugs</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Robot Vacuums</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Additional Categories Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-lg font-semibold mb-4 text-gray-900">Gaming</h2>
-              <ul className="space-y-2">
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Consoles</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Laptops</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Accessories</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Monitors</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Chairs</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-lg font-semibold mb-4 text-gray-900">Cameras</h2>
-              <ul className="space-y-2">
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">DSLR Cameras</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Mirrorless Cameras</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Action Cameras</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Camera Lenses</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Camera Accessories</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-lg font-semibold mb-4 text-gray-900">Wearables</h2>
-              <ul className="space-y-2">
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smartwatches</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Fitness Trackers</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Glasses</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Rings</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">VR Headsets</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-lg font-semibold mb-4 text-gray-900">Accessories</h2>
-              <ul className="space-y-2">
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Power Banks</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Cables & Chargers</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Cases & Covers</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Storage Devices</li>
-                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Screen Protectors</li>
-              </ul>
-            </div>
-          </div>
-        </div>
         
         {/* Featured Products - Extended Grid */}
         <div className="mb-12">
@@ -1031,12 +939,109 @@ const ElectronicsPage = () => {
         </div>
 
         {/* Product Listings */}
-        <div>
+        <div className="mb-12">
           <h2 className="text-xl font-bold mb-6 text-gray-900">All Products</h2>
           <div className="space-y-6">
             {electronics.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
+          </div>
+        </div>
+
+        {/* Featured Categories - Extended */}
+        <div>
+          <h2 className="text-xl font-bold mb-6 text-gray-900">Categories</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">Mobiles & Tablets</h2>
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smartphones</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Tablets</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Mobile Accessories</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Tablet Accessories</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Mobile Chargers</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">Computers</h2>
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Laptops</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Desktop PCs</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Laptops</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Monitors</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">PC Components</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">Audio & Video</h2>
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Headphones</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Speakers</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart TVs</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Soundbars</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Microphones</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">Smart Home</h2>
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Speakers</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Security Cameras</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Lights</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Plugs</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Robot Vacuums</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Additional Categories Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">Gaming</h2>
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Consoles</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Laptops</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Accessories</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Monitors</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Gaming Chairs</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">Cameras</h2>
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">DSLR Cameras</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Mirrorless Cameras</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Action Cameras</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Camera Lenses</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Camera Accessories</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">Wearables</h2>
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smartwatches</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Fitness Trackers</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Glasses</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Smart Rings</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">VR Headsets</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">Accessories</h2>
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Power Banks</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Cables & Chargers</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Cases & Covers</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Storage Devices</li>
+                <li className="text-gray-700 hover:text-blue-600 cursor-pointer">Screen Protectors</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

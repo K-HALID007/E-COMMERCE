@@ -15,9 +15,19 @@ const Categories = () => {
   const handleItemClick = (category, subcategory, item) => {
     // Close the dropdown
     setActiveDropdown(null);
-    // Navigate to the electronic route
+    // Navigate based on category
     if (category.toLowerCase() === 'electronics') {
       router.push('/electronic');
+    } else if (category.toLowerCase() === 'fashion') {
+      router.push('/fashion');
+    } else if (category.toLowerCase() === 'home & kitchen') {
+      router.push('/kitchen&home');
+    } else if (category.toLowerCase() === 'beauty') {
+      router.push('/beauty');
+    } else if (category.toLowerCase() === 'sports') {
+      router.push('/sports');
+    } else if (category.toLowerCase() === 'books') {
+      router.push('/books');
     }
   };
 
@@ -266,7 +276,12 @@ const Categories = () => {
                         {subcategory.items.slice(0, 5).map((item, itemIndex) => (
                           <li key={itemIndex}>
                             <Link
-                              href={activeDropdown.toLowerCase() === 'electronics' ? '/electronic' : '#'}
+                              href={activeDropdown.toLowerCase() === 'electronics' ? '/electronic' : 
+                                    activeDropdown.toLowerCase() === 'fashion' ? '/fashion' :
+                                    activeDropdown.toLowerCase() === 'home & kitchen' ? '/kitchen&home' :
+                                    activeDropdown.toLowerCase() === 'beauty' ? '/beauty' :
+                                    activeDropdown.toLowerCase() === 'sports' ? '/sports' :
+                                    activeDropdown.toLowerCase() === 'books' ? '/books' : '#'}
                               onClick={() => handleItemClick(activeDropdown, subcategory.title, item)}
                               className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200 block py-1 hover:translate-x-1 transform transition-transform"
                             >
@@ -281,7 +296,12 @@ const Categories = () => {
 
                 <div className="border-t border-gray-100 pt-4 mt-6">
                   <Link
-                    href={activeDropdown.toLowerCase() === 'electronics' ? '/electronic' : '#'}
+                    href={activeDropdown.toLowerCase() === 'electronics' ? '/electronic' : 
+                          activeDropdown.toLowerCase() === 'fashion' ? '/fashion' :
+                          activeDropdown.toLowerCase() === 'home & kitchen' ? '/kitchen&home' :
+                          activeDropdown.toLowerCase() === 'beauty' ? '/beauty' :
+                          activeDropdown.toLowerCase() === 'sports' ? '/sports' :
+                          activeDropdown.toLowerCase() === 'books' ? '/books' : '#'}
                     className="text-blue-600 font-medium text-sm hover:text-blue-700 transition-colors flex items-center space-x-1 group"
                     onClick={() => setActiveDropdown(null)}
                   >
